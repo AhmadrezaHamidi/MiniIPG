@@ -9,7 +9,7 @@ using Shared;
 using Shared.Messaging;
 
 
-namespace PaymentService.Application.Payments.Commands;
+namespace PaymentService.Application.Payments.Commands.UpdateStatusTransaction;
 
 public class UpdateStatusTransactionCommandHandler : IRequestHandler<UpdateStatusTransactionCommand, Result<string>>
 {
@@ -41,9 +41,7 @@ public class UpdateStatusTransactionCommandHandler : IRequestHandler<UpdateStatu
             transaction.Status = request.IsSuccess ? PaymentStatus.Success : PaymentStatus.Failed;
             transaction.UpdatedAt = DateTime.UtcNow;
             if (request.IsSuccess)
-            {
                 transaction.RRN = request.Rrn;
-            }
 
             _transactionRepository.Update(transaction);
             await _transactionRepository.SaveChangesAsync();

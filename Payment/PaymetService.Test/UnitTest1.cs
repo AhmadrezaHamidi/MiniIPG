@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Options;
 using Moq;
 using PaymentService.Application.Common.Models;
-using PaymentService.Application.Payments.Commands;
 using PaymentService.Domain.Entities;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
+using PaymentService.Application.Payments.Commands.CreateTransaction;
 
 namespace PaymetService.Test
 {

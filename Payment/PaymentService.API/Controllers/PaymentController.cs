@@ -1,6 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PaymentService.Application.Payments.Commands;
+using PaymentService.Application.Payments.Commands.CreateTransaction;
+using PaymentService.Application.Payments.Commands.UpdateStatusTransaction;
+using PaymentService.Application.Payments.Commands.VerifyTransaction;
 
 namespace PaymentService.API.Controllers;
 

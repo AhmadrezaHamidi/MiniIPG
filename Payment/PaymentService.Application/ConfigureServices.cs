@@ -20,7 +20,9 @@ public static class ConfigureServices
             cfg.AddBehavior(typeof(IPipelineBehavior<,>),
                 typeof(UnhandledExceptionBehaviour<,>));
             cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
-        });
+            cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        
+});
 
      
         return services;

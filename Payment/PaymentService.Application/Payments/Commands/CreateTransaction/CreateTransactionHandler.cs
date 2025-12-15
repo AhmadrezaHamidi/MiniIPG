@@ -6,7 +6,7 @@ using PaymentService.Domain.Entities;
 
 using Shared;
 
-namespace PaymentService.Application.Payments.Commands;
+namespace PaymentService.Application.Payments.Commands.CreateTransaction;
 
 public class CreateTransactionHandler : IRequestHandler<CreateTransactionCommand,Result< TransactionResponse>>
 {

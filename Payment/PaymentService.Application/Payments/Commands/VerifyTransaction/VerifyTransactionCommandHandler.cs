@@ -1,14 +1,10 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Options;
-using PaymentService.Application.Payments.Dtos;
-using PaymentService.Domain;
 using PaymentService.Domain.Entities;
-
 using Shared;
-using System.Transactions;
 using PaymentService.Application.Common.Models;
-
-namespace PaymentService.Application.Payments.Commands;
+using PaymentService.Application.Payments.Dtos;
+namespace PaymentService.Application.Payments.Commands.VerifyTransaction;
 
 public class VerifyTransactionCommandHandler : IRequestHandler<VerifyTransactionCommand, Result<VerifyTransactioResponse>>
 {

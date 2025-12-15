@@ -2,7 +2,7 @@
 using PaymentService.Application.Payments.Dtos;
 using Shared;
 
-namespace PaymentService.Application.Payments.Commands;
+namespace PaymentService.Application.Payments.Commands.VerifyTransaction;
 
 public record VerifyTransactionCommand(
     string Token,

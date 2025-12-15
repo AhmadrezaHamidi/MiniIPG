@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace PaymentService.Application.Payments.Commands;
+namespace PaymentService.Application.Payments.Commands.CreateTransaction;
 
 public class CreateTransactionCommandValidator : AbstractValidator<CreateTransactionCommand>
 {

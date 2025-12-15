@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Shared;
 
-namespace PaymentService.Application.Payments.Commands;
+namespace PaymentService.Application.Payments.Commands.UpdateStatusTransaction;
 
 public record UpdateStatusTransactionCommand(
     string Token,
@@ -9,3 +9,5 @@ public record UpdateStatusTransactionCommand(
     string? Rrn
   
 ) : IRequest<Result<string>>;
+
+
