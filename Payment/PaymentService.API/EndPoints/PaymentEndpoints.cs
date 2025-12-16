@@ -1,16 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Data;
-using Azure.Core;
-using FluentValidation.Results;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
 using PaymentService.API.Abstraction;
 using PaymentService.API.EndPoints.Constants;
-using PaymentService.Application.Payments.Commands.UpdateStatusTransaction;
-using PaymentService.Application.Payments.Commands.VerifyTransaction;
 using PaymentService.Application.Payments.Dtos;
-using Refit;
-using Shared;
 
 namespace PaymentService.API.EndPoints;
 

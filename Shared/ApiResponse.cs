@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace PaymentService.API.Abstraction;
+namespace Shared;
 
 public class ApiResponse<T>
 {
