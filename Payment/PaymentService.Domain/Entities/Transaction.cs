@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PaymentService.Domain.Common;
 using Shared;
+using Shared.Domain;
 
 
 namespace PaymentService.Domain.Entities;

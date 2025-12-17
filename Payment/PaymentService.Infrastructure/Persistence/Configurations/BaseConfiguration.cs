@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PaymentService.Domain;
-using PaymentService.Domain.Common;
+using Shared.Domain;
 
 namespace PaymentService.Infrastructure.Persistence.Configurations;
 

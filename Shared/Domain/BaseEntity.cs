@@ -1,4 +1,4 @@
-﻿namespace PaymentService.Domain.Common;
+﻿namespace Shared.Domain;
 
 public abstract class BaseEntity
 {

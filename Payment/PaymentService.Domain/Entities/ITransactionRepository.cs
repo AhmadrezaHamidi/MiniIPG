@@ -1,4 +1,4 @@
-﻿using PaymentService.Domain.Common;
+﻿using Shared.Domain;
 
 namespace PaymentService.Domain.Entities;
 

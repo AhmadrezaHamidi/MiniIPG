@@ -1,4 +1,5 @@
-﻿namespace PaymentService.Domain.Common;
+﻿namespace Shared.Domain;
+
 
 public abstract class BaseAuditableEntity : BaseEntity
 {

@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace PaymentService.Domain.Common;
+namespace Shared.Domain;
 
 public interface IRepository<T> where T : class
 {
