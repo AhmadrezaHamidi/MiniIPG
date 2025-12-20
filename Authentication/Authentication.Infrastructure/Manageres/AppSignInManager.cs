@@ -1,10 +1,4 @@
-﻿using Authentication.Domain.Entities;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
+﻿
 namespace Authentication.Infrastructure.Manageres;
 
 public class AppSignInManager : SignInManager<User>

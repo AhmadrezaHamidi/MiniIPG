@@ -1,9 +1,4 @@
-﻿using Authentication.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-
-namespace Authentication.Infrastructure.Manageres;
+﻿namespace Authentication.Infrastructure.Manageres;
 
 public class AppUserManager : UserManager<User>
 {

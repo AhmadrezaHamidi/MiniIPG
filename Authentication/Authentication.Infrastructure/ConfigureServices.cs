@@ -1,16 +1,4 @@
-﻿using System.Reflection;
-using System.Text;
-using Authentication.Domain.Entities;
-using Authentication.Domain.Repositories;
-using Authentication.Infrastructure.Manageres;
-using Authentication.Infrastructure.Persistence;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-
+﻿
 namespace Authentication.Infrastructure;
 
 public static class ServiceRegistration
@@ -21,7 +9,8 @@ public static class ServiceRegistration
         {
             options.UseSqlServer(configuration.GetConnectionString("Local"));
         });
-        //services.AddScoped<IUserService, UserService>();
+        
+        services.AddScoped<IUserService, UserService>();
 
         services.AddIdentity<User, Role>(option => option.SignIn.RequireConfirmedAccount = false)
                     .AddEntityFrameworkStores<IdentityDbContext>()

@@ -1,4 +1,10 @@
 ﻿using Authentication.API.EndPoints.Constants;
+using Authentication.Application.AuthorizationCommands;
+using Authentication.Application.AuthorizationQueries;
+using Authentication.Application.Dtos;
+using MediatR;
+using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Authentication.API.EndPoints;
 
@@ -75,51 +81,59 @@ public static class UserEndpoints
     }
 
     private static Task<IResult> Login(
-        [AsParameters] LoginRequestDto requestDto,
+        IMediator mediator,
+        [FromBody] LoginRequestDto requestDto,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendRequest(() => userService.GetToken(requestDto.Username, requestDto.Password), cancellationToken);
+        => MinimalApiExtensions.SendRequest(requestDto.ToCommand(), mediator, cancellationToken);
+
+
 
     private static Task<IResult> RefreshToken(
-        [AsParameters] RefreshTokenRequestDto requestDto,
-        IUserService userService,
+        IMediator mediator,
+        [FromBody] RefreshTokenRequestDto requestDto,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendRequest(() => userService.GetRefreshToken(requestDto.RefreshToken), cancellationToken);
+        => MinimalApiExtensions.SendRequest(requestDto.ToCommand(), mediator, cancellationToken);
 
-    private static Task<IResult> GetAll(IUserService userService, CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendRequest(() => userService.GetAll(), cancellationToken);
 
+    // GetAll
+    private static Task<IResult> GetAll(
+        IMediator mediator,
+        CancellationToken cancellationToken)
+        => MinimalApiExtensions.SendRequest(new GetAllUsersQuery(), mediator, cancellationToken);
+
+    // GetById
     private static Task<IResult> GetById(
         int id,
-        IUserService userService,
+        IMediator mediator,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendRequest(() => userService.GetById(id), cancellationToken);
+        => MinimalApiExtensions.SendRequest(new GetByIdQuery(id), mediator, cancellationToken);
 
-    // Register
+    // Register (normal user)
     private static Task<IResult> Register(
         UserCreateDto model,
-        IUserService userService,
+        IMediator mediator,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendAsync(() => userService.Create(model, "user"), cancellationToken);
+        => MinimalApiExtensions.SendRequest(model.ToCommand("user"), mediator, cancellationToken);
 
     // RegisterAdminUser
     private static Task<IResult> RegisterAdminUser(
         UserCreateDto model,
-        IUserService userService,
+        IMediator mediator,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendAsync(() => userService.Create(model, "admin"), cancellationToken);
+        => MinimalApiExtensions.SendRequest(model.ToCommand("admin"), mediator, cancellationToken);
 
     // Update
     private static Task<IResult> Update(
         UserUpdateDto model,
-        IUserService userService,
+        IMediator mediator,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendAsync(() => userService.Update(model), cancellationToken);
+        => MinimalApiExtensions.SendRequest(model.ToCommand(), mediator, cancellationToken);
 
     // Delete
     private static Task<IResult> Delete(
         int userId,
-        IUserService userService,
+        IMediator mediator,
         CancellationToken cancellationToken)
-        => MinimalApiExtensions.SendAsync(() => userService.Delete(userId), cancellationToken);
+        => MinimalApiExtensions.SendRequest(new DeleteUserCommand(userId), mediator, cancellationToken);
 }
 
