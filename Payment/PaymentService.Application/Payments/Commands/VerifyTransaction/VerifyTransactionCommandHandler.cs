@@ -2,8 +2,8 @@
 using Microsoft.Extensions.Options;
 using PaymentService.Domain.Entities;
 using Shared;
-using PaymentService.Application.Common.Models;
 using PaymentService.Application.Payments.Dtos;
+using Shared.Common.Models;
 namespace PaymentService.Application.Payments.Commands.VerifyTransaction;
 
 public class VerifyTransactionCommandHandler : IRequestHandler<VerifyTransactionCommand, Result<VerifyTransactioResponse>>

@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Options;
-using PaymentService.Application.Common.Models;
 using PaymentService.Application.Payments.Dtos;
 using PaymentService.Domain.Entities;
 
 using Shared;
+using Shared.Common.Models;
 
 namespace PaymentService.Application.Payments.Commands.CreateTransaction;
 

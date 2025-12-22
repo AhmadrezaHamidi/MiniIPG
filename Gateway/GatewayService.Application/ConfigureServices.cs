@@ -1,9 +1,8 @@
 ﻿using System.Reflection;
-
 using FluentValidation;
-using GatewayService.Application.Common.Behaviours;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Shared.Common.Behaviours;
 
 
 namespace GatewayService.Application;

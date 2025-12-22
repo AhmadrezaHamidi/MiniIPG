@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace GatewayService.Application.Common.Behaviours;
+namespace Shared.Common.Behaviours;
 
 public class
     UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>

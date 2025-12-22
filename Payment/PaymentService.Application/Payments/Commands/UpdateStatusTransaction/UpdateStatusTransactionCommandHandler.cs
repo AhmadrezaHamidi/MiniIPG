@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Options;
-using PaymentService.Application.Common.Models;
 using PaymentService.Application.Payments.Dtos;
 using PaymentService.Domain;
 using PaymentService.Domain.Entities;
 
 using Shared;
+using Shared.Common.Models;
 using Shared.Messaging;
 
 

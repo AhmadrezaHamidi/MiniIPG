@@ -1,4 +1,4 @@
-﻿namespace PaymentService.Application.Common.Models;
+﻿namespace Shared.Common.Models;
 
 public class AppSettings
 {

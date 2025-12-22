@@ -2,10 +2,10 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PaymentService.Application.Common.Models;
 using PaymentService.Domain;
 using PaymentService.Infrastructure.Common;
 using PaymentService.Infrastructure.Persistence;
+using Shared.Common.Models;
 using Shared.Domain;
 using Shared.Dto;
 

@@ -3,7 +3,7 @@ namespace Authentication.Infrastructure;
 
 public static class ServiceRegistration
 {
-    public static IServiceCollection AddDataServices(this IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration configuration)
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration configuration)
     {
         services.AddDbContext<IdentityDbContext>(options =>
         {

@@ -6,6 +6,9 @@ using Hangfire.SqlServer;
 using Shared.Messaging;
 using PaymentService.Application.Common.Interfaces;
 using PaymentService.Infrastructure.Jobs;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
