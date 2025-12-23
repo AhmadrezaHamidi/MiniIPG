@@ -15,17 +15,3 @@ public record CreateUserCommand(
     }
 }
 
-public class LoginCommandValidator : AbstractValidator<LoginCommand>
-{
-    public LoginCommandValidator()
-    {
-        RuleFor(x => x.username)
-            .NotEmpty().WithMessage("نام کاربری الزامی است")
-            .MaximumLength(100);
-
-        RuleFor(x => x.password)
-            .NotEmpty().WithMessage("رمز عبور الزامی است")
-            .MinimumLength(6).WithMessage("رمز عبور حداقل باید ۶ کاراکتر باشد")
-            .MaximumLength(100);
-    }
-}

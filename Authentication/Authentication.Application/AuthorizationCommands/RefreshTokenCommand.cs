@@ -1,5 +1,7 @@
 ﻿
 
+using FluentValidation;
+
 namespace Authentication.Application.AuthorizationCommands;
 
 public record RefreshTokenCommand(string RefreshToken) : IRequest<Result<TokenDto>>
@@ -10,5 +12,17 @@ public record RefreshTokenCommand(string RefreshToken) : IRequest<Result<TokenDt
     {
         public async Task<Result<TokenDto>> Handle(RefreshTokenCommand request, CancellationToken cancellationToken)
             => await UserService.GetRefreshTokenAsync(request.RefreshToken);
+    }
+}
+
+
+public class RefreshTokenCommandValidator : AbstractValidator<RefreshTokenCommand>
+{
+    public RefreshTokenCommandValidator()
+    {
+        RuleFor(x => x.RefreshToken)
+            .NotEmpty().WithMessage("رفرش توکن  الزامی است")
+            .NotNull().WithMessage("رفرش توکن الزامی است")
+            .MaximumLength(100);
     }
 }
